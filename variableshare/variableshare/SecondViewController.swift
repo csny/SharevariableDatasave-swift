@@ -16,7 +16,8 @@ class SecondViewController: UIViewController {
         // appDelegateの変数を操作
         ++appDelegate.point
         // ラベル表示,ラベル用にString型へ変換
-        secondViewLabel.text = "[" + String(stringInterpolationSegment: appDelegate.point) + "]"
+        let tmpPoint: Int = appDelegate.point
+        secondViewLabel.text = "[\(String(tmpPoint))]"
     }
 
     override func viewDidLoad() {
@@ -33,6 +34,7 @@ class SecondViewController: UIViewController {
         // AppDelegateのインスタンスを取得
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         // ラベル表示,ラベル用にString型へ変換
-        secondViewLabel.text = "[" + String(stringInterpolationSegment: appDelegate.point) + "]"
+        let tmpPoint: Int = appDelegate.point
+        secondViewLabel.text = "[\(String(tmpPoint))]"
     }
 }

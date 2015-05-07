@@ -16,7 +16,8 @@ class FirstViewController: UIViewController {
         // appDelegateの変数を操作
         ++appDelegate.point
         // ラベル表示,ラベル用にString型へ変換
-        firstViewLabel.text = "[" + String(stringInterpolationSegment: appDelegate.point) + "]"
+        let tmpPoint: Int = appDelegate.point
+        firstViewLabel.text = "[\(String(tmpPoint))]"
     }
     @IBAction func saveBtn(sender: AnyObject) {
         // AppDelegateのインスタンスを取得
@@ -73,6 +74,7 @@ class FirstViewController: UIViewController {
         // AppDelegateのインスタンスを取得
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         // ラベル表示,ラベル用にString型へ変換
-        firstViewLabel.text = "[" + String(stringInterpolationSegment: appDelegate.point) + "]"
+        let tmpPoint: Int = appDelegate.point
+        firstViewLabel.text = "[\(String(tmpPoint))]"
     }
 }
