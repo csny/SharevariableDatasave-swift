@@ -60,10 +60,10 @@ class FirstViewController: UIViewController {
         let wrapSavePoint: Int? = defaults.integerForKey("UserPoint")
         // アンラッピング
         if let savePoint: Int = wrapSavePoint {
-            println("データ読み出し成功wrapped:\(savePoint)")
+            println("データ読み出し成功unwrapped:\(savePoint)")
             appDelegate.point = savePoint
         } else {
-            println("データなしunwrapped:\(wrapSavePoint)")
+            println("データなしwrapped:\(wrapSavePoint)")
         }
     }
 
