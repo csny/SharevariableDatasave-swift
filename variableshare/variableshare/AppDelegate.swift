@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    // 画面間で共有する変数pointの宣言と初期化
     var point: Int = 0
 
 
