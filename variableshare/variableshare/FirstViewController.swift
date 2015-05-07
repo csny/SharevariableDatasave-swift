@@ -28,6 +28,8 @@ class FirstViewController: UIViewController {
         let success = defaults.synchronize()
         if success {
             println("保存に成功")
+        } else {
+            println("保存に失敗")
         }
     }
     @IBAction func clearBtn(sender: AnyObject) {
@@ -55,13 +57,13 @@ class FirstViewController: UIViewController {
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         // ディスクから読み出し
         let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        var tempoint: Int? = defaults.integerForKey("UserPoint")
-        if (tempoint==nil) {
-            println("データなし")
+        let wrapSavePoint: Int? = defaults.integerForKey("UserPoint")
+        // アンラッピング
+        if let savePoint: Int = wrapSavePoint {
+            println("データ読み出し成功wrapped:\(savePoint)")
+            appDelegate.point = savePoint
         } else {
-            println("データ読み出し:\(tempoint)")
-            appDelegate.point = tempoint!
-            tempoint = nil
+            println("データなしunwrapped:\(wrapSavePoint)")
         }
     }
 
